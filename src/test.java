@@ -22,14 +22,15 @@ public class test {
     public static void main(String[] args) {
         datasets.Square_sample square_sample =new datasets.Square_sample(-10000,-10000,20000,20000,100000);
 
-        datasets.Circle_sample circle_sample=new datasets.Circle_sample(10000,-5000,-5000,1000);
+        datasets.Circle_sample circle_sample=new datasets.Circle_sample(10000,-5000,-5000,100000);
+        datasets.Circle_sample_control_h const_h_circle_sample=new datasets.Circle_sample_control_h(10000,-5000,-5000,100000,2000);
 
         datasets.Third_sample third_sample=new datasets.Third_sample(10000,10000);
 
 
-        datasets.Forth_sample forth_sample=new datasets.Forth_sample(10000,10000);
+        datasets.Forth_sample forth_sample=new datasets.Forth_sample(1000000,10000);
 
-        List<Point> datas=circle_sample.sample;
+        List<Point> datas=forth_sample.sample;
 
 //        double[] xs=new double[]{-2,-1,-1.1,-1,0,0,1,2};
 //        double[] ys=new double[]{0,1,0,-1,1,-1.5,-1,0};
