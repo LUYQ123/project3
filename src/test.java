@@ -22,14 +22,14 @@ public class test {
     public static void main(String[] args) {
         datasets.Square_sample square_sample =new datasets.Square_sample(-10000,-10000,20000,20000,100000);
 
-        datasets.Circle_sample circle_sample=new datasets.Circle_sample(10000,-5000,-5000,100000);
+        datasets.Circle_sample circle_sample=new datasets.Circle_sample(10000,-5000,-5000,1000);
 
-        datasets.Third_sample third_sample=new datasets.Third_sample(10000);
+        datasets.Third_sample third_sample=new datasets.Third_sample(10000,10000);
 
 
-        datasets.Forth_sample forth_sample=new datasets.Forth_sample(10000);
+        datasets.Forth_sample forth_sample=new datasets.Forth_sample(10000,10000);
 
-        List<Point> datas=square_sample.sample;
+        List<Point> datas=circle_sample.sample;
 
 //        double[] xs=new double[]{-2,-1,-1.1,-1,0,0,1,2};
 //        double[] ys=new double[]{0,1,0,-1,1,-1.5,-1,0};
@@ -42,11 +42,13 @@ public class test {
 
 
         List<Point> Graham_scan_answer=INC_CH.getConvexHull(datas);
-        //show(Graham_scan_answer);
+
         List<Point> Gift_answer=GIFT_CH.getConvexHull(datas);
-        //show(Gift_answer);
+
         List<Point> MbC_answer=MbC_CH.getConvexHull(datas);
-       // show(MbC_answer);
+//        show(Graham_scan_answer);
+//        show(Gift_answer);
+//        show(MbC_answer);
 
 
 

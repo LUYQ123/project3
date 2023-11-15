@@ -9,7 +9,7 @@ public final class INC_CH {
      * An enum denoting a directional-turn between 3 points (vectors).
      */
 
-    static private final double eplison = 0.00000000001;
+    static private final double eplison = 0.000000001;
     protected static enum Turn { CLOCKWISE, COUNTER_CLOCKWISE, COLLINEAR }
 
     /**
@@ -102,11 +102,11 @@ public final class INC_CH {
 
             switch(turn) {
                 case COUNTER_CLOCKWISE:
-                    stack.push(middle);
-                    stack.push(head);
+                    i--;
                     break;
                 case CLOCKWISE:
-                    i--;
+                    stack.push(middle);
+                    stack.push(head);
                     break;
                 case COLLINEAR:
                     stack.push(head);
@@ -133,7 +133,7 @@ public final class INC_CH {
      *               1 such point exists, the one with the lowest x coordinate
      *               is returned.
      */
-    protected static Point getLowestPoint(List<Point> points) {
+    protected static Point getLeftMostPoint(List<Point> points) {
 
         Point lowest = points.get(0);
 
@@ -180,7 +180,7 @@ public final class INC_CH {
      */
     protected static Set<Point> getSortedPointSet(List<Point> points) {
 
-        final Point lowest = getLowestPoint(points);
+        final Point lowest = getLeftMostPoint(points);
 
 
 //        System.out.println(lowest.x+" "+lowest.y);
@@ -262,10 +262,10 @@ public final class INC_CH {
 //        System.out.println("crossProduct "+crossProduct);
 
         if(crossProduct < -eplison) {
-            return Turn.COUNTER_CLOCKWISE;
+            return Turn.CLOCKWISE;
         }
         else if(crossProduct > eplison) {
-            return Turn.CLOCKWISE;
+            return Turn.COUNTER_CLOCKWISE;
         }
         else {
             return Turn.COLLINEAR;
